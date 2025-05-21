@@ -1,0 +1,160 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Chuutiii 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffe6ec, #ffe0f0);
+      overflow: hidden;
+    }
+
+    #startPage, #wishPage {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #wishPage {
+      display: none;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5rem;
+      color: hotpink;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #800080;
+      margin: 20px 0;
+      max-width: 800px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background: hotpink;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button:hover {
+      background: #ff3399;
+    }
+
+    .heart {
+      color: red;
+      font-size: 3rem;
+      animation: beat 1s infinite alternate;
+    }
+
+    @keyframes beat {
+      from { transform: scale(1); }
+      to { transform: scale(1.2); }
+    }
+
+    .float-object {
+      position: absolute;
+      bottom: -100px;
+      font-size: 2rem;
+      animation: float 6s infinite ease-in;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      button {
+        padding: 12px 24px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 🎶 Background Music -->
+<audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+  <!-- 💡 Replace this link with your own MP3 file if needed -->
+</audio>
+
+<!-- 🌟 Start Page -->
+<div id="startPage">
+  <h1>Are You Ready Chuutii ?</h1>
+  <p>Click to begin the surprise ❤️</p>
+  <button onclick="startSurprise()">Start the Surprise 🎁</button>
+</div>
+
+<!-- 🎈 Birthday Wish Page -->
+<div id="wishPage">
+  <h1>Happy 24th Birthday Mage Sosa Mala  🎉</h1>
+  <p>To the most beautiful soul 🌸<br>
+    You are a blessing in this world, and in my heart 💖<br>
+    I hope this day brings a big smile to your face just like you always bring to mine.
+    This website is more than just a surprise… it’s a piece of my heart, wrapped in every word, every color, 
+    every moment I created here all for you. You may not fully realize it, but the day you came into this world, 
+    someone incredibly special arrived someone whose laugh can melt hearts, whose smile could light galaxies, 
+    and whose kindness has unknowingly changed lives… especially mine. I built this just to see you smile because 
+    your happiness means more to me than anything. If you ever wonder if you’ve made a difference in someone’s life,
+     let this be your answer: you’ve completely changed mine. And if after seeing this, you feel like you’ve won something 
+     in life  just know, the real winner here… is me, for simply having you in my world. 💫💗
+
+
+  </p>
+  <h2 style="font-family: 'Pacifico', cursive; color: hotpink;">Hey Beautiful 🌷</h2>
+  <div class="heart">❤️</div>
+</div>
+
+<!-- 🎈 Flower Petal and Balloon Animations -->
+<script>
+  function startSurprise() {
+    document.getElementById("startPage").style.display = "none";
+    document.getElementById("wishPage").style.display = "flex";
+  }
+
+  const emojis = ['🎈', '🌸', '🌷', '🎉', '💐'];
+  for (let i = 0; i < 40; i++) {
+    let floatObj = document.createElement("div");
+    floatObj.className = "float-object";
+    floatObj.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+    floatObj.style.left = Math.random() * 100 + "vw";
+    floatObj.style.animationDelay = (Math.random() * 5) + "s";
+    floatObj.style.fontSize = (Math.random() * 20 + 24) + "px";
+    document.body.appendChild(floatObj);
+  }
+</script>
+
+</body>
+</html>
